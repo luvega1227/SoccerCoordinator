@@ -189,10 +189,16 @@ func sort(_ players: [[String: Any]]) {
     }
 }
 
-///// Returns the average height of a team
-//func averageHeight(of team: [[String: Any]]) -> Int {
-//
-//}
+/// Returns the average height of a team
+func averageHeight(of team: [[String: Any]]) -> Int {
+    var totalHeight: Float = 0
+    
+    for player in team {
+        totalHeight += Float(player["height"] as! Int)
+    }
+    
+    return Int((totalHeight / Float(team.count)).rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero))
+}
 
 
 
