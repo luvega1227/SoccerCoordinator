@@ -204,7 +204,7 @@ func appendLetters(from team: [[String: Any]], name: String, timing: String) {
     var teamLetters: [String] = []
     
     for player in team {
-        let letter = "\nDear \(player["guardians"] as! String):, \n\nCongradulations, \(player["name"] as! String) has been invited to practice with the \(name) Team  on \(timing). \n\nThanks You!"
+        let letter = "\nDear \(player["guardians"] as! String): \n\nCongradulations, \(player["name"] as! String) has been invited to practice with the \(name) Team on \(timing)! If your have any questions or need additional information, please contact me. \n\nThanks You!"
         
         teamLetters.append(letter)
     }
@@ -214,6 +214,17 @@ func appendLetters(from team: [[String: Any]], name: String, timing: String) {
 // Sort players in each team example
 sort(players)
 
+// Average height of each team printed onto console
+print("Team Sharks average height is \(averageHeight(of: teamSharks)) inches.")
+print("Team Dragons average height is \(averageHeight(of: teamDragons)) inches.")
+print("Team Raptors average height is \(averageHeight(of: teamRaptors)) inches.")
 
+// Appends letters to the team's collections
+appendLetters(from: teamSharks, name: "Sharks", timing: "March 17th, 1:00 PM")
+appendLetters(from: teamDragons, name: "Dragons", timing: "March 17th, 3:00 PM")
+appendLetters(from: teamRaptors, name: "Raptors", timing: "March 18th, 1:00 PM")
 
-
+// Print letters
+for letter in letters {
+    print(letter)
+}
