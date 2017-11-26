@@ -200,6 +200,19 @@ func averageHeight(of team: [[String: Any]]) -> Int {
     return Int((totalHeight / Float(team.count)).rounded(FloatingPointRoundingRule.toNearestOrAwayFromZero))
 }
 
+func appendLetters(from team: [[String: Any]], name: String, timing: String) {
+    var teamLetters: [String] = []
+    
+    for player in team {
+        let letter = "\nDear \(player["guardians"] as! String):, \n\nCongradulations, \(player["name"] as! String) has been invited to practice with the \(name) Team  on \(timing). \n\nThanks You!"
+        
+        teamLetters.append(letter)
+    }
+    letters.append(contentsOf: teamLetters)
+}
+
+// Sort players in each team example
+sort(players)
 
 
 
